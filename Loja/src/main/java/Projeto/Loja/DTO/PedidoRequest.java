@@ -6,16 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-public class PedidoRequest {
-
     @Getter
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    public class PedidoRequestDTO {
+    public class PedidoRequest {
 
         private Long clienteId;
 
         private STATUSPEDIDO status;
     }
-}
+

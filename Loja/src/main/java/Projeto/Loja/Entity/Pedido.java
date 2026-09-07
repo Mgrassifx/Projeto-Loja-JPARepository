@@ -1,5 +1,6 @@
 package Projeto.Loja.Entity;
 
+import Projeto.Loja.Entity.Enum.STATUSPEDIDO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,5 +30,5 @@ public class Pedido {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_pedido" , nullable = false)
-    private StatusPedido status ;
+    private STATUSPEDIDO status ;
 }

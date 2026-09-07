@@ -4,7 +4,7 @@ package Projeto.Loja.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-
+@Builder
 @Entity
 @Getter
 @Setter

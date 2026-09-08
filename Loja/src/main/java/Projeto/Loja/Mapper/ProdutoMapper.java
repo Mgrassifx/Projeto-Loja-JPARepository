@@ -1,8 +1,45 @@
 package Projeto.Loja.Mapper;
 
-import org.mapstruct.Mapper;
+import Projeto.Loja.DTO.CategoriaResponse;
+import Projeto.Loja.DTO.ProdutoRequest;
+import Projeto.Loja.DTO.ProdutoResponse;
+import Projeto.Loja.Entity.Produto;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProdutoMapper {
+
+    public Produto toEntity(ProdutoRequest request) {
+
+        Produto produto = new Produto();
+
+        produto.setNome(request.getNome());
+        produto.setPreco(request.getPreco());
+        produto.setEstoque(request.getEstoque());
+
+        return produto;
+    }
+
+    public ProdutoResponse toResponse(Produto produto) {
+
+        CategoriaResponse categoria = new CategoriaResponse(
+                produto.getCategoria().getId(),
+                produto.getCategoria().getNome()
+        );
+
+        return new ProdutoResponse(
+                produto.getId(),
+                produto.getNome(),
+                produto.getPreco(),
+                produto.getEstoque(),
+                categoria
+        );
+    }
+
+    public void updateEntity (ProdutoRequest request , Produto produto) {
+
+        produto.setNome(request.getNome());
+        produto.setPreco(request.getPreco());
+        produto.setEstoque(request.getEstoque());
+    }
 }

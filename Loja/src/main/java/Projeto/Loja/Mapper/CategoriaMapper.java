@@ -10,11 +10,10 @@ public class CategoriaMapper {
 
     public Categoria toEntity(CategoriaRequest request) {
 
-        Categoria categoria = new Categoria();
-
-        categoria.setNome(request.getNome());
-
-        return  categoria;
+        return new Categoria(
+                null,
+                request.nome()
+        );
     }
 
     public CategoriaResponse toResponse(Categoria categoria) {
@@ -27,6 +26,6 @@ public class CategoriaMapper {
 
     public void updateEntity(CategoriaRequest request , Categoria categoria) {
 
-        categoria.setNome(request.getNome());
+        categoria.setNome(request.nome());
     }
 }

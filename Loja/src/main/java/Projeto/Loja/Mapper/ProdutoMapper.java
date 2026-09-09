@@ -13,9 +13,9 @@ public class ProdutoMapper {
 
         Produto produto = new Produto();
 
-        produto.setNome(request.getNome());
-        produto.setPreco(request.getPreco());
-        produto.setEstoque(request.getEstoque());
+        produto.setNome(request.nome());
+        produto.setPreco(request.preco());
+        produto.setEstoque(request.estoque());
 
         return produto;
     }
@@ -38,8 +38,8 @@ public class ProdutoMapper {
 
     public void updateEntity (ProdutoRequest request , Produto produto) {
 
-        produto.setNome(request.getNome());
-        produto.setPreco(request.getPreco());
-        produto.setEstoque(request.getEstoque());
+        produto.setNome(request.nome());
+        produto.setPreco(request.preco());
+        produto.setEstoque(request.estoque());
     }
 }

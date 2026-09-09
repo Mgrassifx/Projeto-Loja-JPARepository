@@ -13,9 +13,9 @@ public class ClienteMapper {
 
         Cliente cliente = new Cliente();
 
-        cliente.setNome(request.getNome());
-        cliente.setEmail(request.getEmail());
-        cliente.setTelefone(request.getTelefone());
+        cliente.setNome(request.nome());
+        cliente.setEmail(request.email());
+        cliente.setTelefone(request.telefone());
 
         return cliente;
     }
@@ -31,8 +31,8 @@ public class ClienteMapper {
     }
     public void updateEntity(ClienteRequest request , Cliente cliente) {
 
-        cliente.setNome(request.getNome());
-        cliente.setEmail(request.getEmail());
-        cliente.setTelefone(request.getTelefone());
+        cliente.setNome(request.nome());
+        cliente.setEmail(request.email());
+        cliente.setTelefone(request.telefone());
     }
 }

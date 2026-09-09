@@ -14,7 +14,7 @@ public class PedidoMapper {
 
         Pedido pedido = new Pedido();
 
-        pedido.setStatus(request.getStatus());
+        pedido.setStatus(request.status());
 
         return pedido;
     }
@@ -39,6 +39,6 @@ public class PedidoMapper {
 
     public void updateEntity(PedidoRequest request , Pedido pedido) {
 
-        pedido.setStatus(request.getStatus());
+        pedido.setStatus(request.status());
     }
 }

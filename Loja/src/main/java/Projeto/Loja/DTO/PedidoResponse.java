@@ -9,17 +9,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class PedidoResponse {
+public record PedidoResponse(
 
-    private Long id;
+         Long id,
 
-    private ClienteResponse cliente;
+         ClienteResponse cliente,
 
-    private LocalDateTime dataPedido;
+         LocalDateTime dataPedido,
 
-    private STATUSPEDIDO status;
-}
+         STATUSPEDIDO status
+) {}

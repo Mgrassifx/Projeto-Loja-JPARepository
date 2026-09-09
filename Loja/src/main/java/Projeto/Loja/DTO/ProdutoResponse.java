@@ -8,19 +8,16 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProdutoResponse {
 
-    private Long id;
+public record ProdutoResponse(
 
-    private String nome;
+         Long id,
 
-    private BigDecimal preco;
+         String nome,
 
-    private int estoque;
+         BigDecimal preco,
 
-    private CategoriaResponse categoriaID;
-}
+         int estoque,
+
+         CategoriaResponse categoriaID
+) {}

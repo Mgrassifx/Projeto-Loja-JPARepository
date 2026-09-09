@@ -5,17 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class ClienteResponse {
 
-    private Long id;
+public record ClienteResponse(
 
-    private String nome;
+         Long id,
 
-    private String email;
+         String nome,
 
-    private String telefone;
-}
+         String email,
+
+         String telefone
+) {}

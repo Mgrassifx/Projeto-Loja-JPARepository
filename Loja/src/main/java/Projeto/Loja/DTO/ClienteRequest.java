@@ -6,16 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class ClienteRequest {
 
-    private String nome;
+public record ClienteRequest(
 
-    private String email;
+         String nome,
 
-    private String telefone;
+         String email,
 
+         String telefone
+) {
 }

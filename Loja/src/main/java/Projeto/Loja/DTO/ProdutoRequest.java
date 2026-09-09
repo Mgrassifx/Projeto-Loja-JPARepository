@@ -8,17 +8,13 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProdutoRequest {
+public record ProdutoRequest(
 
-    private String nome;
+         String nome,
 
-    private BigDecimal preco;
+         BigDecimal preco,
 
-    private int estoque;
+         int estoque,
 
-    private Long categoriaId;
-}
+         Long categoriaId
+){}

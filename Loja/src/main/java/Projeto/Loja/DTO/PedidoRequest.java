@@ -6,14 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public class PedidoRequest {
+public record PedidoRequest(
 
-        private Long clienteId;
+        Long clienteId,
 
-        private STATUSPEDIDO status;
-    }
+        STATUSPEDIDO status
+){}
 

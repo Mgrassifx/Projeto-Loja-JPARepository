@@ -6,11 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class CategoriaRequest {
 
-    private String nome;
-}
+public record CategoriaRequest(
+
+        String nome
+) { }

@@ -24,7 +24,7 @@ public class PedidoService {
 
         Pedido pedido = pedidoMapper.toEntity(request);
 
-        Cliente cliente = clienteRepository.findById(request.getClienteId())
+        Cliente cliente = clienteRepository.findById(request.clienteId())
                 .orElseThrow();
 
         pedido.setCliente(cliente);
@@ -40,7 +40,8 @@ public class PedidoService {
         List<Pedido> lista = pedidoRepository.findAll();
 
 
-        return lista.stream()
+        return pedidoRepository.findAll()
+                .stream()
                 .map(pedidoMapper :: toResponse)
                 .toList();
     }
@@ -57,7 +58,7 @@ public class PedidoService {
         Pedido pedido = pedidoRepository.findById(id)
                         .orElseThrow();
 
-        Cliente cliente = clienteRepository.findById(request.getClienteId())
+        Cliente cliente = clienteRepository.findById(request.clienteId())
                         .orElseThrow();
 
         pedidoMapper.updateEntity(request , pedido);

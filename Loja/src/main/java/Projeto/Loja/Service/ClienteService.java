@@ -34,7 +34,8 @@ public class ClienteService {
 
         List<Cliente> lista = clienteRepository.findAll();
 
-        return lista.stream()
+        return clienteRepository.findAll()
+                .stream()
                 .map(clienteMapper :: toResponse)
                 .toList();
 

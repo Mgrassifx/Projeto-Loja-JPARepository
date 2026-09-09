@@ -28,9 +28,8 @@ public class CategoriaService {
 
     public List<CategoriaResponse> findAll () {
 
-        List<Categoria> lista = categoriaRepository.findAll();
-
-        return lista.stream()
+        return categoriaRepository.findAll()
+                .stream()
                 .map(categoriaMapper::toResponse)
                 .toList();
     }

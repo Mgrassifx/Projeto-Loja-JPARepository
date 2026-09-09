@@ -25,7 +25,7 @@ public class ProdutoService {
 
         Produto produto = produtoMapper.toEntity(request);
 
-        Categoria categoria = categoriaRepository.findById(request.getCategoriaId())
+        Categoria categoria = categoriaRepository.findById(request.categoriaId())
                 .orElseThrow();
 
         produto.setCategoria(categoria);
@@ -38,9 +38,9 @@ public class ProdutoService {
 
     public List<ProdutoResponse> findAll () {
 
-        List<Produto> lista = produtoRepository.findAll();
 
-        return lista.stream()
+        return produtoRepository.findAll()
+                .stream()
                 .map(produtoMapper :: toResponse)
                 .toList();
     }
@@ -58,7 +58,7 @@ public class ProdutoService {
         Produto produto = produtoRepository.findById(id)
                 .orElseThrow();
 
-        Categoria categoria = categoriaRepository.findById(request.getCategoriaId())
+        Categoria categoria = categoriaRepository.findById(request.categoriaId())
                 .orElseThrow();
 
         produtoMapper.updateEntity(request , produto);
